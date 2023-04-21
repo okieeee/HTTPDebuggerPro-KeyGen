@@ -9,3 +9,5 @@ They do not even protect their executables, so.. anyone could do this, but got i
 - Open HTTP Debugger at least one time.
 - Generate a key with the KeyGen.
 - Press Apply button.
+
+^^^ if does not work, do it without internet access.
