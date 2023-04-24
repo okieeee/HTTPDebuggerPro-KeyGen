@@ -32,7 +32,21 @@ namespace HTTPDebuggerKeyGen
 
                 int appVerParsed = int.Parse(string.Join("", AppVer.ToCharArray().Where(char.IsDigit)));
 
-                textBox1.Text = string.Format("SN{0:d}", appVerParsed ^ ((~GetVolumeSerial("C") >> 1) + 736) ^ 0x590D4);
+                string SN = string.Format("SN{0:d}", appVerParsed ^ ((~GetVolumeSerial("C") >> 1) + 736) ^ 0x590D4);
+
+                SNtextBox.Text = SN;
+
+                if (!openKey.GetValueNames().Contains(SN))
+                {
+                    if (string.IsNullOrWhiteSpace(keyTextBox.Text))
+                    {
+                        keyTextBox.Text = "Generate a license key";
+                    }
+                }
+                else
+                {
+                    keyTextBox.Text = openKey.GetValue(SN).ToString();
+                }
             }
             else
             {
@@ -72,18 +86,17 @@ namespace HTTPDebuggerKeyGen
             return key;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void applyButton_Click(object sender, EventArgs e)
         {
             string AppVer = (string)openKey.GetValue("AppVer");
             int appVerParsed = int.Parse(string.Join("", AppVer.ToCharArray().Where(char.IsDigit)));
+            string SN = string.Format("SN{0:d}", appVerParsed ^ ((~GetVolumeSerial("C") >> 1) + 736) ^ 0x590D4);
 
-            if (textBox2.Text != string.Empty)
+            if (keyTextBox.Text != string.Empty)
             {
-                Clipboard.SetText(textBox2.Text);
+                key.SetValue(SN, keyTextBox.Text);
 
-                key.SetValue(string.Format("SN{0:d}", appVerParsed ^ ((~GetVolumeSerial("C") >> 1) + 736) ^ 0x590D4), textBox2.Text);
-
-                MessageBox.Show("Applied the key and copied it to your clipboard!");
+                MessageBox.Show("Successfully applied the key!");
             }
             else
             {
@@ -91,10 +104,10 @@ namespace HTTPDebuggerKeyGen
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void genButton_Click(object sender, EventArgs e)
         {
-            textBox2.Text = CreateKey();   // Key: XXXXXX7CXXXXXXXX 16long
-                                           // Value: SNXXXXXXXXXX SN+10long
+            keyTextBox.Text = CreateKey();   // Key: XXXXXX7CXXXXXXXX 16long
+                                             // Value: SNXXXXXXXXXX SN+10long
         }
     }
 }

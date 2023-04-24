@@ -16,48 +16,48 @@
         #region Código generado por el Diseñador de Windows Forms
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.applyButton = new System.Windows.Forms.Button();
+            this.keyTextBox = new System.Windows.Forms.TextBox();
+            this.genButton = new System.Windows.Forms.Button();
+            this.SNtextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // applyButton
             // 
-            this.button1.Location = new System.Drawing.Point(116, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 21);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Apply * Copy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.applyButton.Location = new System.Drawing.Point(116, 64);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(80, 21);
+            this.applyButton.TabIndex = 0;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
-            // textBox2
+            // keyTextBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(22, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
-            this.textBox2.TabIndex = 2;
+            this.keyTextBox.Enabled = false;
+            this.keyTextBox.Location = new System.Drawing.Point(22, 38);
+            this.keyTextBox.Name = "keyTextBox";
+            this.keyTextBox.Size = new System.Drawing.Size(174, 20);
+            this.keyTextBox.TabIndex = 2;
             // 
-            // button2
+            // genButton
             // 
-            this.button2.Location = new System.Drawing.Point(22, 64);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 21);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Generate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.genButton.Location = new System.Drawing.Point(22, 64);
+            this.genButton.Name = "genButton";
+            this.genButton.Size = new System.Drawing.Size(78, 21);
+            this.genButton.TabIndex = 3;
+            this.genButton.Text = "Generate";
+            this.genButton.UseVisualStyleBackColor = true;
+            this.genButton.Click += new System.EventHandler(this.genButton_Click);
             // 
-            // textBox1
+            // SNtextBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(22, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 4;
+            this.SNtextBox.Enabled = false;
+            this.SNtextBox.Location = new System.Drawing.Point(22, 12);
+            this.SNtextBox.Name = "SNtextBox";
+            this.SNtextBox.Size = new System.Drawing.Size(174, 20);
+            this.SNtextBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -76,14 +76,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(220, 96);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SNtextBox);
+            this.Controls.Add(this.genButton);
+            this.Controls.Add(this.keyTextBox);
+            this.Controls.Add(this.applyButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HTTPDebugger KeyGen";
+            this.Text = "HTTPDebuggerPro KeyGen";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,10 +92,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.TextBox keyTextBox;
+        private System.Windows.Forms.Button genButton;
+        private System.Windows.Forms.TextBox SNtextBox;
         private System.Windows.Forms.Label label1;
     }
 }
