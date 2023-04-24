@@ -21,8 +21,16 @@ Ex: SNXXXXXXXXXX SN+10long
 ![alt text](https://i.imgur.com/90wd2Eg.png)
 
 # Instructions:
-- Open HTTP Debugger at least one time.
+- Open HTTPDebuggerPro at least one time.
 - Generate a key with the KeyGen.
 - Press Apply button.
 
 ^^^ if does not work, do it without internet access.
+
+# Install renamed files:
+- Put them in the HTTPDebuggerPro installation directory.
+- Install the service with the following command:
+```
+  cmd sc create xcHTTP binpath="C:\Program Files (x86)\HTTPDebuggerPro\xc.exe" type=own start=auto displayname=xc
+```
+- Open xcUI :P
