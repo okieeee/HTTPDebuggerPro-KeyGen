@@ -12,8 +12,9 @@ namespace HTTPDebuggerKeyGen
         [DllImport("kernel32.dll")]
         private static extern long GetVolumeInformation(string PathName, StringBuilder VolumeNameBuffer, uint VolumeNameSize, ref uint VolumeSerialNumber, ref uint MaximumComponentLength, ref uint FileSystemFlags, StringBuilder FileSystemNameBuffer, uint FileSystemNameSize);
 
-        public RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\\MadeForNet\\HTTPDebuggerPro");
-        public RegistryKey openKey = Registry.CurrentUser.OpenSubKey(@"Software\\MadeForNet\\HTTPDebuggerPro");
+        private const string RegistrySubKey = @"Software\MadeForNet\HTTPDebuggerPro";
+        private RegistryKey key;
+        private RegistryKey openKey;
 
         public static Random randomInt = new Random();
 
@@ -24,6 +25,9 @@ namespace HTTPDebuggerKeyGen
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            key = Registry.CurrentUser.CreateSubKey(RegistrySubKey);
+            openKey = Registry.CurrentUser.OpenSubKey(RegistrySubKey);
+        
             if (openKey.GetValueNames().Contains("AppVer"))
             {
                 string AppVer = (string)openKey.GetValue("AppVer");
